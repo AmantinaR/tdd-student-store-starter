@@ -27,10 +27,11 @@ export default function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [shoppingCart, setShoppingCart] = useState([]);
   const [checkoutForm, setCheckoutForm] = useState({email: "", name: ""});
+  const [success, setSuccess] = useState(false);
 
 
   useEffect(() => {
-    axios.get('https://codepath-store-api.herokuapp.com/store').then(function(response) {
+    axios.get('http://localhost:3001/store').then(function(response) {
       if(response) {
         if(searchValue) {
           setProducts(response.data.products.filter((product) => product.name.toLowerCase().includes(searchValue) && (product.category === filter.toLowerCase() || filter === "All Categories")));
@@ -43,7 +44,7 @@ export default function App() {
     }).catch(function(error) {
       setError(error);
     })
-  }, [products, searchValue, filter])
+  }, [searchValue, filter])
 
   //on change, filter products
   function onSearchChange(evt) {
@@ -105,6 +106,15 @@ export default function App() {
 
   function handleOnSubmitCheckoutForm() {
     //backend
+    axios.post("http://localhost:3001/store", {user: checkoutForm, shoppingCart: shoppingCart}).then(function(response) {
+      setShoppingCart([]);
+      setCheckoutForm({email: "", name: ""});
+      setSuccess(true);
+      setError();
+    }).catch(function(error) {
+      setError(error.message);
+      console.log(error);
+    })
   }
 
   
@@ -113,12 +123,12 @@ export default function App() {
       <BrowserRouter>
         <Navbar></Navbar>
         <div className="horizontal">
-          <Sidebar handleOnToggle={handleOnToggle} isOpen={isOpen} shoppingCart={shoppingCart} products={products} checkoutForm={checkoutForm} handleOnCheckoutFormChange={handleOnCheckoutFormChange} handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}/>
+          <Sidebar success={success} error={error} handleOnToggle={handleOnToggle} isOpen={isOpen} shoppingCart={shoppingCart} products={products} checkoutForm={checkoutForm} handleOnCheckoutFormChange={handleOnCheckoutFormChange} handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}/>
           <Routes>
             <Route path="/" element={<main>
             <Home shoppingCart={shoppingCart} handleAddItemToCart={handleAddItemToCart} handleRemoveItemToCart={handleRemoveItemToCart} filter={filter} onFilterClick={onFilterClick} products={products} searchValue={searchValue} onSearchChange={onSearchChange}/>
           </main>}/>
-          <Route path="/products/:productId" element={<ProductDetail products={products}/>}/>
+          <Route path="/products/:productId" element={<ProductDetail products={products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemToCart={handleRemoveItemToCart} shoppingCart={shoppingCart}/>}/>
           <Route path="*" element={<NotFound/>}/>
           </Routes>
         </div>
