@@ -11,7 +11,8 @@ import {
   BrowserRouter,
   Route,
   Link,
-  Routes
+  Routes,
+  useResolvedPath
 } from "react-router-dom";
 import axios from "axios"
 
@@ -23,6 +24,9 @@ export default function App() {
   const [isFetching, setFetching] = useState();
   const [searchValue, setSearchValue] = useState("");
   const [filter, setFilter] = useState("All Categories");
+  const [isOpen, setIsOpen] = useState(false);
+  const [shoppingCart, setShoppingCart] = useState([]);
+  const [checkoutForm, setCheckoutForm] = useState({email: "", name: ""});
 
 
   useEffect(() => {
@@ -51,8 +55,56 @@ export default function App() {
   function onFilterClick(evt) {
     setFilter(evt.target.textContent);
     console.log(filter);
-
     //evt.target.classList.add("active");
+  }
+
+  function handleOnToggle(evt) {
+    console.log(isOpen);
+    let opposite = !isOpen;
+    console.log(opposite);
+    setIsOpen(opposite);
+    console.log("toggled", isOpen);
+  }
+
+  function handleAddItemToCart(productId) {
+    if(shoppingCart.some(obj => obj.id === productId)) {
+      //let item = shoppingCart.filter(obj => obj.id === productId)[0];
+      const index = shoppingCart.findIndex(object => object.id === productId);
+      let item = shoppingCart[index];
+      item.quantity++;
+      setShoppingCart([...shoppingCart.slice(0, index), item, ...shoppingCart.slice(index+1, shoppingCart.length)]);
+      console.log("shoppingCart", shoppingCart);
+    } else {
+      setShoppingCart(shoppingCart => [...shoppingCart, {id: productId, quantity: 1}]);
+      console.log("shoppingCart", shoppingCart);
+    }
+    
+  }
+
+  function handleRemoveItemToCart(productId) {
+    if(shoppingCart.some(obj => obj.id === productId)) {
+      //let item = shoppingCart.filter(obj => obj.id === productId)[0];
+      const index = shoppingCart.findIndex(object => object.id === productId);
+      let item = shoppingCart[index];
+      item.quantity--;
+      if (item.quantity === 0) {
+        setShoppingCart([...shoppingCart.slice(0, index), ...shoppingCart.slice(index+1, shoppingCart.length)]);
+        console.log("shoppingCart", shoppingCart);
+      } else {
+        setShoppingCart([...shoppingCart.slice(0, index), item, ...shoppingCart.slice(index+1, shoppingCart.length)]);
+      }
+    } else {
+      return;
+    }
+  }
+
+  function handleOnCheckoutFormChange(name, value) {
+    console.log("checkout form change", name, value);
+    setCheckoutForm({...checkoutForm, [name]: value});
+  }
+
+  function handleOnSubmitCheckoutForm() {
+    //backend
   }
 
   
@@ -61,10 +113,10 @@ export default function App() {
       <BrowserRouter>
         <Navbar></Navbar>
         <div className="horizontal">
-          <Sidebar />
+          <Sidebar handleOnToggle={handleOnToggle} isOpen={isOpen} shoppingCart={shoppingCart} products={products} checkoutForm={checkoutForm} handleOnCheckoutFormChange={handleOnCheckoutFormChange} handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}/>
           <Routes>
             <Route path="/" element={<main>
-            <Home filter={filter} onFilterClick={onFilterClick} products={products} searchValue={searchValue} onSearchChange={onSearchChange}/>
+            <Home shoppingCart={shoppingCart} handleAddItemToCart={handleAddItemToCart} handleRemoveItemToCart={handleRemoveItemToCart} filter={filter} onFilterClick={onFilterClick} products={products} searchValue={searchValue} onSearchChange={onSearchChange}/>
           </main>}/>
           <Route path="/products/:productId" element={<ProductDetail products={products}/>}/>
           <Route path="*" element={<NotFound/>}/>

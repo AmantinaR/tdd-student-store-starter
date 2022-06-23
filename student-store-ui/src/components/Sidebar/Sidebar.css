@@ -6,6 +6,9 @@
     height: 100%;
     z-index: 9;
 }
+.sidebar.open{
+    width: 350px;
+}
 .arrow {
     font-size: 40px;
     background-color: white;
@@ -18,4 +21,9 @@
 }
 .icon-box {
     margin-top: 30px;
+}
+.toggle-button {
+    border: 0px solid white;
+    background-color: transparent;
+    cursor: pointer;
 }

@@ -4,13 +4,13 @@ import Hero from "../Hero/Hero";
 import ProductGrid from "../ProductGrid/ProductGrid";
 import Search from "../Search/Search";
 
-export default function Home({products, searchValue, onSearchChange, onFilterClick, filter}) {
+export default function Home({products, searchValue, onSearchChange, onFilterClick, filter, handleAddItemToCart, handleRemoveItemToCart, shoppingCart}) {
   return (
     <div className="home">
       <Hero></Hero>
       <Search onFilterClick={onFilterClick} filter={filter} searchValue={searchValue} onSearchChange={onSearchChange}/>
       <h2>Our Products</h2>
-      <ProductGrid products={products}></ProductGrid>
+      <ProductGrid shoppingCart={shoppingCart} products={products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemToCart={handleRemoveItemToCart}></ProductGrid>
       <section id="About">
         <h2>About</h2>
         <div className="about">

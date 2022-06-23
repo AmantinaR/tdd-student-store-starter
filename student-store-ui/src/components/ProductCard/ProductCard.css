@@ -21,3 +21,16 @@
 .product-card-details {
     padding: 10px;
 }
+.button-row {
+    display: flex;
+    flex-direction: row;
+    height: 20%;
+    align-items: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    
+}
+.product-quantity {
+    margin-left: 10px;
+    height: 100%;
+}

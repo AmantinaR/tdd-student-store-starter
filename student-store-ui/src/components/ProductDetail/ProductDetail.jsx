@@ -6,7 +6,7 @@ import Logo from "../Logo/Logo";
 import ProductView from "../ProductView/ProductView";
 import axios from "axios";
 
-export default function ProductDetail({}) {
+export default function ProductDetail({handleAddItemToCart, handleRemoveItemToCart}) {
     const [product, setProduct] = useState();
     const [isFetching, setFetching] = useState(true);
     let { productId } = useParams();
@@ -21,6 +21,6 @@ export default function ProductDetail({}) {
     });
     return (<div className="product-detail">
         {isFetching ? <h4>Loading...</h4> : 
-        <ProductView product={product} productId={productId}></ProductView>}
+        <ProductView product={product} productId={productId} handleAddItemToCart={handleAddItemToCart} handleRemoveItemToCart={handleRemoveItemToCart}></ProductView>}
     </div>);
 }
