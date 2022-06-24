@@ -9,6 +9,7 @@ Selling merchandise in the modern era requires digital solutions. For this proje
 Full Stack Demo
 
 ![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/75582135/175070157-8d54f6c3-eca2-4dbd-a8a4-f33f22b735e7.gif)
+
 Front End Demo
 
 
