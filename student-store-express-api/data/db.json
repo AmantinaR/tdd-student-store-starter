@@ -145,5 +145,332 @@
       "price": 999.99
     }
   ],
-  "purchases": []
+  "purchases": [
+    {
+      "id": 1,
+      "name": "Amantina",
+      "email": "student@codepath.org",
+      "order": [
+        {
+          "id": 2,
+          "quantity": 2
+        }
+      ],
+      "total": 3.2625,
+      "createdAt": "2022-06-24T17:46:51.855Z",
+      "receipt": {
+        "user": {
+          "name": "Amantina",
+          "email": "student@codepath.org"
+        },
+        "items": [
+          {
+            "name": "Flamin Hot Cheetos",
+            "quantity": 2,
+            "price": "1.50",
+            "totalPrice": "3.00"
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "name": "Amantina",
+      "email": "student@codepath.org",
+      "order": [
+        {
+          "id": 2,
+          "quantity": 2
+        }
+      ],
+      "total": 3.2625,
+      "createdAt": "2022-06-24T18:17:14.136Z",
+      "receipt": {
+        "user": {
+          "name": "Amantina",
+          "email": "student@codepath.org"
+        },
+        "items": [
+          {
+            "name": "Flamin Hot Cheetos",
+            "quantity": 2,
+            "price": "1.50",
+            "totalPrice": "3.00"
+          }
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "name": "amantina",
+      "email": "amantina.rossi.site@codepath.org",
+      "order": [
+        {
+          "id": 2,
+          "quantity": 2
+        }
+      ],
+      "total": 3.2625,
+      "createdAt": "2022-06-24T18:17:24.108Z",
+      "receipt": {
+        "user": {
+          "email": "amantina.rossi.site@codepath.org",
+          "name": "amantina"
+        },
+        "items": [
+          {
+            "name": "Flamin Hot Cheetos",
+            "quantity": 2,
+            "price": "1.50",
+            "totalPrice": "3.00"
+          }
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "name": "me you",
+      "email": "yme@you.com",
+      "order": [
+        {
+          "id": 3,
+          "quantity": 1
+        },
+        {
+          "id": 6,
+          "quantity": 1
+        },
+        {
+          "id": 5,
+          "quantity": 1
+        },
+        {
+          "id": 4,
+          "quantity": 1
+        },
+        {
+          "id": 1,
+          "quantity": 1
+        }
+      ],
+      "total": 37.757999999999996,
+      "createdAt": "2022-06-24T18:17:54.058Z",
+      "receipt": {
+        "user": {
+          "email": "yme@you.com",
+          "name": "me you"
+        },
+        "items": [
+          {
+            "name": "Cinnamon Rolls",
+            "quantity": 1,
+            "price": "2.99",
+            "totalPrice": "2.99"
+          },
+          {
+            "name": "Bar Code Shirts",
+            "quantity": 1,
+            "price": "19.99",
+            "totalPrice": "19.99"
+          },
+          {
+            "name": "Fruit Medley",
+            "quantity": 1,
+            "price": "7.50",
+            "totalPrice": "7.50"
+          },
+          {
+            "name": "Coconut Water",
+            "quantity": 1,
+            "price": "3.25",
+            "totalPrice": "3.25"
+          },
+          {
+            "name": "Rice Krispies",
+            "quantity": 1,
+            "price": "0.99",
+            "totalPrice": "0.99"
+          }
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "name": "amantina",
+      "email": "amantina.rossi.site@codepath.org",
+      "order": [
+        {
+          "id": 3,
+          "quantity": 1
+        },
+        {
+          "id": 4,
+          "quantity": 1
+        },
+        {
+          "id": 5,
+          "quantity": 1
+        }
+      ],
+      "total": 14.94225,
+      "createdAt": "2022-06-24T18:23:54.291Z",
+      "receipt": {
+        "user": {
+          "email": "amantina.rossi.site@codepath.org",
+          "name": "amantina"
+        },
+        "items": [
+          {
+            "name": "Cinnamon Rolls",
+            "quantity": 1,
+            "price": "2.99",
+            "totalPrice": "2.99"
+          },
+          {
+            "name": "Coconut Water",
+            "quantity": 1,
+            "price": "3.25",
+            "totalPrice": "3.25"
+          },
+          {
+            "name": "Fruit Medley",
+            "quantity": 1,
+            "price": "7.50",
+            "totalPrice": "7.50"
+          }
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "name": "amantina",
+      "email": "amantina.rossi.site@codepath.org",
+      "order": [
+        {
+          "id": 8,
+          "quantity": 1
+        },
+        {
+          "id": 13,
+          "quantity": 1
+        },
+        {
+          "id": 16,
+          "quantity": 1
+        }
+      ],
+      "total": 1185.3532500000001,
+      "createdAt": "2022-06-24T18:24:51.394Z",
+      "receipt": {
+        "user": {
+          "email": "amantina.rossi.site@codepath.org",
+          "name": "amantina"
+        },
+        "items": [
+          {
+            "name": "Knitted Beanie",
+            "quantity": 1,
+            "price": "19.99",
+            "totalPrice": "19.99"
+          },
+          {
+            "name": "Copper Bracelet",
+            "quantity": 1,
+            "price": "70.00",
+            "totalPrice": "70.00"
+          },
+          {
+            "name": "Smart Glasses",
+            "quantity": 1,
+            "price": "999.99",
+            "totalPrice": "999.99"
+          }
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "name": "Geyyy",
+      "email": "hey@hi.com",
+      "order": [
+        {
+          "id": 7,
+          "quantity": 2
+        }
+      ],
+      "total": 10.853250000000001,
+      "createdAt": "2022-06-24T18:30:44.804Z",
+      "receipt": {
+        "user": {
+          "email": "hey@hi.com",
+          "name": "Geyyy"
+        },
+        "items": [
+          {
+            "name": "Striped Socks",
+            "quantity": 2,
+            "price": "4.99",
+            "totalPrice": "9.98"
+          }
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "name": "Amantina",
+      "email": "hey@hi.com",
+      "order": [
+        {
+          "id": 2,
+          "quantity": 1
+        },
+        {
+          "id": 8,
+          "quantity": 4
+        },
+        {
+          "id": 9,
+          "quantity": 3
+        },
+        {
+          "id": 14,
+          "quantity": 1
+        }
+      ],
+      "total": 224.492625,
+      "createdAt": "2022-06-24T18:31:12.404Z",
+      "receipt": {
+        "user": {
+          "email": "hey@hi.com",
+          "name": "Amantina"
+        },
+        "items": [
+          {
+            "name": "Flamin Hot Cheetos",
+            "quantity": 1,
+            "price": "1.50",
+            "totalPrice": "1.50"
+          },
+          {
+            "name": "Knitted Beanie",
+            "quantity": 4,
+            "price": "19.99",
+            "totalPrice": "79.96"
+          },
+          {
+            "name": "Pullover Sweater",
+            "quantity": 3,
+            "price": "4.99",
+            "totalPrice": "14.97"
+          },
+          {
+            "name": "Keyboard",
+            "quantity": 1,
+            "price": "110.00",
+            "totalPrice": "110.00"
+          }
+        ]
+      }
+    }
+  ]
 }
