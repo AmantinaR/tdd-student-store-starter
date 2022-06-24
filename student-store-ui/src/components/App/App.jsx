@@ -5,6 +5,7 @@ import Sidebar from "../Sidebar/Sidebar"
 import Home from "../Home/Home"
 import ProductView from "../ProductView/ProductView"
 import ProductDetail from "../ProductDetail/ProductDetail";
+import PurchaseGrid from "../PurchaseGrid/PurchaseGrid";
 import NotFound from "../NotFound/NotFound"
 import "./App.css"
 import {
@@ -29,6 +30,7 @@ export default function App() {
   const [checkoutForm, setCheckoutForm] = useState({email: "", name: ""});
   const [success, setSuccess] = useState(false);
   const [receipt, setReceipt] = useState({});
+  const [purchases, setPurchases] = useState([]);
 
 
   useEffect(() => {
@@ -45,7 +47,13 @@ export default function App() {
     }).catch(function(error) {
       setError(error);
     })
-  }, [searchValue, filter])
+    axios.get('http://localhost:3001/store/purchases').then(function(response) {
+      setPurchases(response.data.purchases);
+      console.log(response.data.purchases[0]);
+    }).catch(function(error) {
+      //setError(error);
+    })
+  }, [searchValue, filter, receipt])
 
   //on change, filter products
   function onSearchChange(evt) {
@@ -132,6 +140,8 @@ export default function App() {
             <Home shoppingCart={shoppingCart} handleAddItemToCart={handleAddItemToCart} handleRemoveItemToCart={handleRemoveItemToCart} filter={filter} onFilterClick={onFilterClick} products={products} searchValue={searchValue} onSearchChange={onSearchChange}/>
           </main>}/>
           <Route path="/products/:productId" element={<ProductDetail products={products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemToCart={handleRemoveItemToCart} shoppingCart={shoppingCart}/>}/>
+          <Route path="/purchases" element={<PurchaseGrid purchases={purchases}/>}/>
+          <Route path="/purchases/:purchaseId"/>
           <Route path="*" element={<NotFound/>}/>
           </Routes>
         </div>

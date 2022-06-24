@@ -19,7 +19,7 @@ export default function Navbar() {
             <a href="/#Contact">Contact Us</a>
           </li>
           <li>
-          <Link to={"/#"}>Buy Now</Link>
+          <Link to={"/purchases"}>Past Orders</Link>
           </li>
         </ul>
       </div>
