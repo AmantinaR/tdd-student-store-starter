@@ -31,6 +31,7 @@ export default function App() {
   const [success, setSuccess] = useState(false);
   const [receipt, setReceipt] = useState({});
   const [purchases, setPurchases] = useState([]);
+  const [staticProducts, setStaticProducts] = useState([]);
 
 
   useEffect(() => {
@@ -40,6 +41,7 @@ export default function App() {
           setProducts(response.data.products.filter((product) => product.name.toLowerCase().includes(searchValue) && (product.category === filter.toLowerCase() || filter === "All Categories")));
         } else {
           setProducts(response.data.products.filter((product) => (product.category === filter.toLowerCase() || filter === "All Categories")));
+          setStaticProducts(response.data.products);
         }
       } else {
         setError("No products found from API");
@@ -134,7 +136,7 @@ export default function App() {
       <BrowserRouter>
         <Navbar></Navbar>
         <div className="horizontal">
-          <Sidebar receipt={receipt} success={success} error={error} handleOnToggle={handleOnToggle} isOpen={isOpen} shoppingCart={shoppingCart} products={products} checkoutForm={checkoutForm} handleOnCheckoutFormChange={handleOnCheckoutFormChange} handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}/>
+          <Sidebar receipt={receipt} success={success} error={error} handleOnToggle={handleOnToggle} isOpen={isOpen} shoppingCart={shoppingCart} products={staticProducts} checkoutForm={checkoutForm} handleOnCheckoutFormChange={handleOnCheckoutFormChange} handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}/>
           <Routes>
             <Route path="/" element={<main>
             <Home shoppingCart={shoppingCart} handleAddItemToCart={handleAddItemToCart} handleRemoveItemToCart={handleRemoveItemToCart} filter={filter} onFilterClick={onFilterClick} products={products} searchValue={searchValue} onSearchChange={onSearchChange}/>
