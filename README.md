@@ -292,11 +292,11 @@ The following specifications were met on the Express backend and the React front
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-The labs greatly helped me to complete the project. Practicing with React on the Fast Food website greatly aided my ability to use React Components. The practice with advanced React on the Twitter re-create was challenging but reinforced my ability to create a dynamic website. And the API practice from last week was extremely useful because I knew the exact steps to fetch data from the API. Overall, the 2 labs from this week and last week's content helped me feel completely prepared for the front end of this project. 
+The labs greatly helped me to complete the project. Practicing with React on the Fast Food website greatly aided my ability to use React Components. The lab with the gift giver backend practice was directly applicable to implementing the backend for the student store, especially for creating routes and custom errors. Also, the bank lab had great example code for backend models. 
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
-If I had more time, I would have liked to get started on the sidebar front end to prepare for the back end work we will be doing next week. 
+If I had more time, I would have liked to develop the past orders stretch feature further so users could click on a past order to see more details. 
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
