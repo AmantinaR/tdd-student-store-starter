@@ -471,6 +471,80 @@
           }
         ]
       }
+    },
+    {
+      "id": 9,
+      "name": "Amantina",
+      "email": "student@codepath.org",
+      "order": [
+        {
+          "id": 2,
+          "quantity": 2
+        }
+      ],
+      "total": 3.2625,
+      "createdAt": "2022-06-24T18:47:45.519Z",
+      "receipt": {
+        "user": {
+          "name": "Amantina",
+          "email": "student@codepath.org"
+        },
+        "items": [
+          {
+            "name": "Flamin Hot Cheetos",
+            "quantity": 2,
+            "price": "1.50",
+            "totalPrice": "3.00"
+          }
+        ]
+      }
+    },
+    {
+      "id": 10,
+      "name": "amantina",
+      "email": "amantina.rossi.site@codepath.org",
+      "order": [
+        {
+          "id": 3,
+          "quantity": 1
+        },
+        {
+          "id": 8,
+          "quantity": 1
+        },
+        {
+          "id": 16,
+          "quantity": 1
+        }
+      ],
+      "total": 1112.479875,
+      "createdAt": "2022-06-24T18:52:33.989Z",
+      "receipt": {
+        "user": {
+          "email": "amantina.rossi.site@codepath.org",
+          "name": "amantina"
+        },
+        "items": [
+          {
+            "name": "Cinnamon Rolls",
+            "quantity": 1,
+            "price": "2.99",
+            "totalPrice": "2.99"
+          },
+          {
+            "name": "Knitted Beanie",
+            "quantity": 1,
+            "price": "19.99",
+            "totalPrice": "19.99"
+          },
+          {
+            "name": "Smart Glasses",
+            "quantity": 1,
+            "price": "999.99",
+            "totalPrice": "999.99"
+          }
+        ]
+      }
     }
   ]
 }
