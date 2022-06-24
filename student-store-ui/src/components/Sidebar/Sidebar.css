@@ -32,3 +32,23 @@
 .error{
     color: rgb(163, 17, 17);
 }
+.receipt{
+    border: 2px solid var(--gray);
+    background-color: white;
+    border-radius: 8px;
+    padding: 12px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.receipt > ul{
+    padding-left: 20px;
+
+}
+.receipt > ul > li {
+    display: list-item;
+    list-style-type: disc;
+
+}
+.success{
+    margin-left: 20px;
+}

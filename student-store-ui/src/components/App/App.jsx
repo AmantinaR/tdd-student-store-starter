@@ -28,6 +28,7 @@ export default function App() {
   const [shoppingCart, setShoppingCart] = useState([]);
   const [checkoutForm, setCheckoutForm] = useState({email: "", name: ""});
   const [success, setSuccess] = useState(false);
+  const [receipt, setReceipt] = useState({});
 
 
   useEffect(() => {
@@ -107,6 +108,8 @@ export default function App() {
   function handleOnSubmitCheckoutForm() {
     //backend
     axios.post("http://localhost:3001/store", {user: checkoutForm, shoppingCart: shoppingCart}).then(function(response) {
+      setReceipt(response.data.purchase.receipt);
+      console.log(response.data.purchase.receipt);
       setShoppingCart([]);
       setCheckoutForm({email: "", name: ""});
       setSuccess(true);
@@ -123,7 +126,7 @@ export default function App() {
       <BrowserRouter>
         <Navbar></Navbar>
         <div className="horizontal">
-          <Sidebar success={success} error={error} handleOnToggle={handleOnToggle} isOpen={isOpen} shoppingCart={shoppingCart} products={products} checkoutForm={checkoutForm} handleOnCheckoutFormChange={handleOnCheckoutFormChange} handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}/>
+          <Sidebar receipt={receipt} success={success} error={error} handleOnToggle={handleOnToggle} isOpen={isOpen} shoppingCart={shoppingCart} products={products} checkoutForm={checkoutForm} handleOnCheckoutFormChange={handleOnCheckoutFormChange} handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}/>
           <Routes>
             <Route path="/" element={<main>
             <Home shoppingCart={shoppingCart} handleAddItemToCart={handleAddItemToCart} handleRemoveItemToCart={handleRemoveItemToCart} filter={filter} onFilterClick={onFilterClick} products={products} searchValue={searchValue} onSearchChange={onSearchChange}/>
