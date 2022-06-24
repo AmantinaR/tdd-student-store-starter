@@ -1,5 +1,6 @@
-import * as React from "react"
-import "./Navbar.css"
+import * as React from "react";
+import "./Navbar.css";
+import {Link} from "react-router-dom";
 import Logo from "../Logo/Logo";
 
 export default function Navbar() {
@@ -9,7 +10,7 @@ export default function Navbar() {
       <div className="navigation">
         <ul className="nav-links">
           <li>
-            <a href="/">Home</a>
+          <Link to={"/#"}>Home</Link>
           </li>
           <li>
             <a href="/#About">About Us</a>
@@ -18,7 +19,7 @@ export default function Navbar() {
             <a href="/#Contact">Contact Us</a>
           </li>
           <li>
-            <a href="/">Buy Now</a>
+          <Link to={"/#"}>Buy Now</Link>
           </li>
         </ul>
       </div>
