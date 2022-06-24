@@ -28,10 +28,10 @@ Selling merchandise in the modern era requires digital solutions. For this proje
 
 #### Stretch Features
 
-- [ ] User can click in the top navigation bar to scroll to the relevant section.
+- [x] User can click in the top navigation bar to scroll to the relevant section.
 - [ ] User sees a "not found" display when searching for a nonexistent product.
-- [ ] Create an endpoint for fetching all orders in the database, and an endpoint for serving an individual order based on its id.
-- [ ] Build a page in the UI that displays the list of all past orders and lets the user click on any individual order to take them to a more detailed page of the transaction.
+- [x] Create an endpoint for fetching all orders in the database, and an endpoint for serving an individual order based on its id.
+- [x] Build a page in the UI that displays the list of all past orders and lets the user click on any individual order to take them to a more detailed page of the transaction.
 - [ ] Allow users to use an input to filter orders by the email of the person who placed the order.
 
 ### Passing Automated Tests
@@ -281,8 +281,8 @@ The following specifications were met on the Express backend and the React front
           - [x] `total` - the calculated total of the order
           - [x] `createdAt` - a string representation of the date and time when the order was placed
         - **optional**:
-          - [ ] `receipt` - text describing the order (what might go on a receipt)
-      - [ ] It should then send a JSON response back to the client with the new purchase like so: `{ "purchase": purchase }`. The response should have a `201` status code for a resource created action.
+          - [x] `receipt` - text describing the order (what might go on a receipt)
+      - [x] It should then send a JSON response back to the client with the new purchase like so: `{ "purchase": purchase }`. The response should have a `201` status code for a resource created action.
 
 
 ### Reflection
