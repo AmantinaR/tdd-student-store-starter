@@ -27,7 +27,7 @@ Front End Demo
 - [x] User can click the '+' button on a product cart to increment that product in the shopping cart.
 - [x] User can click the '-' button on a product cart to increment that product in the shopping cart.
 - [x] Shopping cart displays a table of products, quantities, subtotal, tax, and total.
-- [ ] User can check out, and can view receipt upon completion.
+- [x] User can check out, and can view receipt upon completion.
 
 #### Stretch Features
 
@@ -52,7 +52,7 @@ The following specifications were met on the Express backend and the React front
     - [x] `*` - anything else should render the `NotFound` component
   - [x] Renders the `Navbar` component on every route
   - [x] Renders the `Sidebar` component on every route
-  - [ ] Should create **at least** the following state variables:
+  - [x] Should create **at least** the following state variables:
     - [x] `products` - an array of product objects that is initially empty.
     - [x] `isFetching` - a boolean value representing whether or not the App is currently fetching the `products` from the API.
     - [x] `error` - a variable used to display a message when something goes wrong with the API requests.
